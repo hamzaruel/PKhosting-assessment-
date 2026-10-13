@@ -31,3 +31,9 @@ The FAQ states that JazzCash and Easypaisa are for PKR invoices, PayPal is for U
 - The project's exchange rates are fixed assessment inputs (1 USD = 278.50 PKR; 1 GBP = 355.00 PKR), not live market rates.
 - Manually verify annual calculations, all three currency displays, saved preferences after reload, keyboard operation, and no page-level horizontal overflow at 360px, 768px, and 1440px, including 200% zoom.
 - Automated tests and Lighthouse have not been run. Browser rendering and assistive-technology behavior still need review.
+
+## Assessment plan specification assumption
+
+The four plan cards and comparison table use illustrative assessment assumptions for CPU, RAM, NVMe storage, monthly transfer, Root/SSH access, and IPv4 support. These values were supplied for the assessment and are not verified live PKHosting plan specifications. Do not present them as confirmed offerings without checking official plan details.
+FAQ styling update: The existing native details/summary FAQ was styled to match the navy and blue page theme, with keyboard focus visibility and clear open/closed indicators. The accordion remains functional without JavaScript. Browser viewport testing has not yet been performed.
+Footer design update: Footer presentation is styled to continue the navy/blue theme, improve text and link readability, show visible keyboard focus, and adapt spacing for small screens. Browser viewport checks are still required.
