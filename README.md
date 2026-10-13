@@ -1,33 +1,78 @@
-# PKHosting VPS pricing page assessment
+# PKHosting VPS Pricing Page Assessment
 
-This project presents four VPS plans with billing and currency controls, a plan comparison, FAQs, and payment information based on the available PKHosting research.
+This project is a responsive VPS pricing page created for the TechAbout Web Developer assessment. It includes four VPS plans, monthly and annual billing, currency conversion, a comparison table, FAQs, and payment information based on the available PKHosting research.
 
-## Run locally
+## How to Run
 
-Open `index.html` directly in a current web browser. No local server, package installation, or build step is required.
+Open `index.html` directly in a modern web browser. No package installation, build step, or local server is required.
 
-## Implemented
+## Features
 
-- Four plans: Starter, Growth, Scale, and Dedicated Core.
-- Monthly and annual billing display. Annual billing totals are calculated as ten monthly payments for twelve months of service.
-- PKR, USD, and GBP display using the fixed exchange rates documented in the page script.
+- Four pricing plans: Starter, Growth, Scale, and Dedicated Core.
+- Monthly and annual billing with calculated annual totals and savings.
+- PKR, USD, and GBP currency options using fixed exchange rates.
 - Billing period and currency preferences saved in browser `localStorage` when available.
-- A comparison table with a contained horizontal scroll area, native expandable FAQ items, and a responsive footer.
-- Responsive pricing layout, labelled controls, keyboard focus styles, and a live region for price updates.
+- A comparison table with ten technical specification rows.
+- Responsive layout for mobile, tablet, and desktop screens.
+- Expandable FAQ items using native HTML elements.
+- Keyboard-accessible controls, visible focus styles, and a live region for price updates.
+- Local HTML, CSS, and JavaScript with no external libraries, fonts, images, or APIs.
 
-The project uses local HTML, CSS, and JavaScript only. It has no external fonts, libraries, images, APIs, or network requests, so the page can be opened offline. The fixed exchange rates avoid a live-rate service but can become stale. Billing and currency preferences use browser `localStorage`; they stay in that browser profile, do not sync to an account, and fall back to monthly PKR when storage is unavailable.
+The plan prices and VPS specifications are illustrative assessment data, not verified live PKHosting offers. The exchange rates are fixed and do not update automatically.
 
-## Verification status
+## Testing and Verification
 
-Browsers tested: none. Browser testing has not been performed. `node --check script.js` and `git diff --check` passed. No automated test suite or Lighthouse run has been performed. Responsive behavior at 360px, 768px, and 1440px, 200% zoom, keyboard interaction, and preference restoration still need manual browser verification.
+**Browser manually tested:** Google Chrome.
 
-## Remaining work
+The following checks were performed manually:
 
-The VPS resource specifications in the comparison table remain marked for confirmation because verified values were not provided for this assessment. Displayed plan prices are illustrative assessment examples, not verified live PKHosting prices. Confirm specifications, current prices, and checkout terms with the provider before purchase. The required 360px, 768px, and 1440px screenshots and Lighthouse report/run are not present and remain to be completed.
+- Responsive layouts at 360px, 768px, and 1440px.
+- Monthly and annual prices, annual totals, and savings calculations.
+- USD and GBP currency switching.
+- Billing and currency preferences after reloading the page.
+- Keyboard navigation, visible focus, and FAQ expand/collapse.
+- Monthly PKR prices and the comparison table with JavaScript disabled.
+- Direct opening of `index.html` using a local `file:///` URL.
+- Layout at 200% browser zoom.
+- Chrome Console check. A missing `favicon.ico` request was identified and addressed.
 
-FAQ presentation: The native FAQ accordion uses the site’s navy and blue palette, with visible focus and open/closed states. It remains usable without JavaScript.
-The footer uses the page's navy and blue palette, with readable text, clear link hover and keyboard-focus states, and spacing adapted for narrow screens.
+The following technical checks passed:
 
-## AI assistance
+- `node --check script.js`
+- `git diff --check`
 
-AI tools assisted with parts of the implementation and review. The project has been reviewed, but manual browser testing remains outstanding. No automated test suite has been run.
+### Offline Testing
+
+Opening `index.html` directly from the local file system displayed the page correctly.
+
+However, reloading the page while Chrome DevTools was set to Offline with the local Live Server URL did not work. This test alone does not establish an internet dependency because the local server may be unreachable in Offline mode. Direct file opening was verified, but a separate comprehensive offline test has not been completed.
+
+### Testing Limitations
+
+- Firefox testing has not been performed.
+- Automated browser tests have not been run.
+- A complete independent accessibility contrast audit has not been performed.
+- A Lighthouse audit was run in Chrome, and a screenshot of the results is saved in the `Screenshot/` folder. The exported Lighthouse HTML report is not included.
+
+## Project Screenshots
+
+The `Screenshot/` folder contains screenshots of the mobile, tablet, desktop, and Lighthouse views.
+
+## Decisions and Trade-offs
+
+- Billing and currency preferences use browser `localStorage` when available. These preferences remain within the current browser profile and do not sync across devices.
+- If browser storage is unavailable, the page falls back to its default settings.
+- Exchange rates are hard-coded as required by the assessment, avoiding external API requests.
+- VPS specifications remain unverified and should be confirmed before use in a real commercial offer.
+- Payment-method choices and research limitations are documented in `NOTES.md`.
+
+## AI Assistance
+
+I built most of the project myself. I used AI assistance for guidance and ideas while implementing parts of the JavaScript, particularly around understanding and reviewing the pricing logic. I also used it for help with a few parts of the CSS. The overall implementation, layout decisions, and remaining work were handled and reviewed by me.
+
+## Future Improvements
+
+- Test the page in Firefox.
+- Perform more detailed accessibility and screen-reader checks.
+- Include the exported Lighthouse HTML report in the repository.
+- Verify VPS specifications, prices, and payment options against reliable provider information.

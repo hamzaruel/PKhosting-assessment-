@@ -1,40 +1,86 @@
-# PKHosting VPS assessment notes
+# PKHosting VPS Assessment Notes
 
-## Live-site observations
+## 1. Live-Site Observations
 
-These notes summarize the accessible official pricing, VPS, and FAQ pages reviewed for the assessment. Site prices and terms can change; check the live pages and checkout before relying on them. The source URLs and page captures were not preserved in this project, so the observations cannot be independently rechecked from the repository.
+These observations summarize the official PKHosting pricing, VPS, and FAQ content accessible during research. The original page URLs and screenshots were not preserved, so the observations cannot be independently rechecked from this repository. Prices and terms may change.
 
-1. **Billing term choices:** The VPS pricing area listed monthly, annual, two-year, and three-year terms, with savings labels on longer terms. This makes commitment options visible, but the controls could not be tested interactively, so dynamic price changes were not confirmed.
-2. **Prices in Pakistani rupees:** The accessible VPS prices were displayed in PKR. This helps local buyers estimate costs without first converting a foreign-currency price. A live currency selector was not confirmed in the accessible page content.
-3. **Plan cards and labels:** Cloud VPS cards ranged from Starter to Ultra, with labels such as Best Value, Most Popular, and High Memory on selected plans. The labels help scan the choices, while the resource details remain necessary for a sound plan comparison.
-4. **Technical details on cards:** Plan cards listed items such as vCPU, RAM, storage, port speed, transfer terms, and root/SSH access. This gives technical buyers useful decision information; terms such as fair use may still need explanation.
-5. **Different VPS locations:** The page separated Cloud VPS in Germany from Premium VPS in Virginia, United States. Showing the location helps buyers consider geography and likely latency for their users.
-6. **Add-on prices shown separately:** Windows licensing and backup charges appeared in separate plan tables, with shared extras listed apart from base VPS prices. Buyers need to combine selected add-ons with the base price to estimate the full cost.
+1. **Billing term choices:** The VPS pricing area listed monthly, annual, two-year, and three-year billing terms, with savings labels for longer commitments. This helps customers compare commitment options, but the billing controls could not be tested interactively, so dynamic price updates were not confirmed.
 
-## Assessment requirements versus observed live behavior
+2. **Prices in Pakistani rupees:** The accessible VPS pricing content displayed prices in PKR. This helps local customers estimate costs without first converting foreign-currency prices. A live currency selector was not confirmed in the researched content.
 
-- The assessment requires a PKR/USD/GBP selector with fixed rates. This is an assessment feature; the research did not confirm that PKHosting provides this selector.
-- The live pages listed several billing terms, but interactive switching and its price updates could not be tested. The assessment's specific annual calculation—ten monthly payments for twelve months—is a project requirement, not a verified live-site rule.
-- The comparison table in this project marks unverified plan specifications for confirmation. Do not replace those markers with guessed CPU, memory, storage, network, backup, or support values.
+3. **Plan cards and labels:** Cloud VPS plans ranged from Starter to Ultra, with labels such as Best Value, Most Popular, and High Memory on selected plans. These labels make plans easier to scan, but customers still need to compare the technical specifications before choosing.
 
-## Payment methods and discrepancy
+4. **Technical details on cards:** Plan information included details such as vCPU, RAM, storage, port speed, transfer terms, and root/SSH access. This helps technical buyers compare plans, although terms such as fair use may require further explanation.
 
-The accessible official footer showed Stripe, PayPal, JazzCash, Easypaisa, and bank account. The FAQ clarifies that Stripe card payments support Visa and Mastercard. That supports five payment channels, or six named options when Visa and Mastercard are counted separately: **Visa, Mastercard, PayPal, JazzCash, Easypaisa, and bank transfer**. These are the six named options recorded from the accessible official sources. The available project files and Git history do not contain the original assessment brief or names for the other two methods. The research did not verify any additional methods; no method-specific exclusion can be substantiated without their names and sources. Do not infer missing methods or claim the provider does not support them.
+5. **Different VPS locations:** The researched content separated Cloud VPS in Germany from Premium VPS in Virginia, United States. Displaying server locations helps customers consider geography and potential latency for their users.
 
-The FAQ states that JazzCash and Easypaisa are for PKR invoices, PayPal is for USD/GBP/EUR invoices rather than PKR, and card payments support PKR, USD, GBP, EUR, AED, and SAR invoices. Bank transfer currency availability depends on invoice currency and may require contacting support.
+6. **Add-on prices shown separately:** Windows licensing and backup charges appeared separately from base VPS prices. This makes additional costs visible, but customers must add the relevant extras to the base price to estimate the total cost.
 
-## Limitations, assumptions, and remaining checks
+## 2. Assessment Requirements vs. Observed Live Behaviour
 
-- The root homepage request timed out during the initial audit. The findings above rely on accessible official pricing, VPS, footer, and FAQ content.
-- Billing controls and live price changes were not interactively tested during research.
-- The displayed project plan prices are illustrative assessment examples, not verified live PKHosting prices. Live prices and product terms may change; verify current amounts with the provider and at checkout.
-- Billing period and currency preferences are stored in browser `localStorage` when available. They are local to that browser profile and do not sync to an account. Unavailable storage falls back to monthly PKR; failed writes are ignored. This behavior is implemented in `script.js` but has not been browser-tested.
-- The project's exchange rates are fixed assessment inputs (1 USD = 278.50 PKR; 1 GBP = 355.00 PKR), not live market rates.
-- Manually verify annual calculations, all three currency displays, saved preferences after reload, keyboard operation, and no page-level horizontal overflow at 360px, 768px, and 1440px, including 200% zoom.
-- Automated tests and Lighthouse have not been run. Browser rendering and assistive-technology behavior still need review.
+- The assessment requires PKR, USD, and GBP currency options with fixed exchange rates. This is an assessment requirement; research did not confirm that the live PKHosting page provides the same selector.
+- The researched page listed several billing terms, but interactive switching and resulting price changes could not be verified.
+- The project's annual billing calculation charges the equivalent of ten monthly payments for twelve months. This is an assessment requirement, not a confirmed PKHosting billing rule.
+- The project uses illustrative plan prices and specifications where live information could not be verified. Unconfirmed specifications should not be presented as official provider offerings.
 
-## Assessment plan specification assumption
+## 3. Payment Methods and Research Limitations
 
-The four plan cards and comparison table use illustrative assessment assumptions for CPU, RAM, NVMe storage, monthly transfer, Root/SSH access, and IPv4 support. These values were supplied for the assessment and are not verified live PKHosting plan specifications. Do not present them as confirmed offerings without checking official plan details.
-FAQ styling update: The existing native details/summary FAQ was styled to match the navy and blue page theme, with keyboard focus visibility and clear open/closed indicators. The accordion remains functional without JavaScript. Browser viewport testing has not yet been performed.
-Footer design update: Footer presentation is styled to continue the navy/blue theme, improve text and link readability, show visible keyboard focus, and adapt spacing for small screens. Browser viewport checks are still required.
+The accessible official footer showed Stripe, PayPal, JazzCash, Easypaisa, and bank account. The FAQ stated that Stripe card payments support Visa and Mastercard. This gives six named payment options when Visa and Mastercard are counted separately: Visa, Mastercard, PayPal, JazzCash, Easypaisa, and bank transfer.
+
+The original assessment brief and the names of its other two expected payment methods were not preserved in the project files or available Git history. The research did not verify additional methods, so they have not been invented or described as unsupported.
+
+The available FAQ information indicated that JazzCash and Easypaisa are for PKR invoices, PayPal supports USD, GBP, and EUR invoices rather than PKR, and card payments support PKR, USD, GBP, EUR, AED, and SAR invoices. Bank-transfer currency availability may depend on the invoice currency and may require contacting support.
+
+## 4. Implementation Decisions and Trade-offs
+
+- **Currency selector:** The project provides PKR, USD, and GBP using the assessment's fixed exchange rates. Fixed rates avoid external API requests but do not reflect changing market rates.
+- **Annual billing:** Annual prices are calculated from ten monthly payments spread across twelve months. This follows the assessment requirement but should not be interpreted as a verified live provider offer.
+- **Preference persistence:** The selected billing period and currency are saved using browser `localStorage` when available. This makes the user's choices persist after reload, but preferences remain local to that browser profile and do not sync across devices. If storage is unavailable, the page falls back to its default settings.
+- **Plan specifications:** The comparison table includes ten specification rows. Values that could not be confirmed are marked as unconfirmed rather than guessed.
+- **Payment methods:** The footer includes a limited set of named payment methods supported by the available research. This avoids inventing provider details, but the full list required by the assessment still needs verification against the original brief or official sources.
+- **Responsive comparison table:** The table can scroll within its own container on narrow screens. This keeps the page itself from requiring horizontal scrolling, although users may need to scroll horizontally to read every comparison column.
+
+## 5. Testing and Verification
+
+The page was manually checked in Google Chrome.
+
+Checks performed:
+
+- Layout at 360px, 768px, and 1440px.
+- Monthly and annual pricing calculations and savings display.
+- Switching between PKR, USD, and GBP.
+- Preference persistence after reloading the page.
+- Keyboard navigation, visible focus, and FAQ expand/collapse.
+- Visibility of monthly PKR prices and the comparison table with JavaScript disabled.
+- Layout at 200% browser zoom.
+- Direct opening of `index.html` using a local `file:///` URL.
+
+Technical checks completed:
+
+- `node --check script.js` passed.
+- `git diff --check` passed.
+- A Lighthouse audit was run in Chrome, and a screenshot of its results is saved in the `Screenshot/` folder. The exported HTML report is not included.
+
+### Offline Test Note
+
+Opening `index.html` directly from the local file system displayed the page correctly. However, reloading the page through the local Live Server URL while Chrome DevTools was set to Offline did not work. This does not, by itself, prove that the page requires an internet connection, because the local server may be unreachable in Offline mode. A separate comprehensive offline test has not been completed.
+
+### Remaining Verification
+
+- Firefox testing has not been performed.
+- Automated browser tests have not been run.
+- A complete independent accessibility contrast audit and screen-reader test have not been completed.
+- The original payment-method list and unverified provider specifications need further research.
+- The exported Lighthouse HTML report is not included.
+
+## 6. Design Updates
+
+**FAQ:** The native HTML `details` and `summary` elements are styled to match the page's navy and blue theme. The FAQ supports keyboard interaction and remains functional without JavaScript.
+
+**Footer:** The footer follows the page's navy and blue visual theme, with readable links, visible keyboard focus, and responsive spacing.
+
+**Responsive layout:** The page was manually checked at mobile, tablet, and desktop widths. The comparison table scrolls within its own container on smaller screens to avoid page-level horizontal overflow.
+
+## 7. Assessment Plan Specification Assumption
+
+The four plan cards and comparison table use illustrative assessment data for CPU, RAM, NVMe storage, monthly transfer, root/SSH access, and IPv4 support. These details are not verified live PKHosting specifications. They should not be represented as confirmed provider offerings without checking current official plan details.
