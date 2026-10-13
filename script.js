@@ -7,6 +7,7 @@
   const announcement = document.getElementById("pricing-announcement");
   const priceElements = document.querySelectorAll("[data-plan-price][data-monthly-pkr]");
   const comparisonPriceLabel = document.getElementById("comparison-price-label");
+  const comparisonDescription = document.getElementById("comparison-description");
 
   if (!billingInputs.length || !currencySelect || !announcement || !priceElements.length) {
     return;
@@ -111,6 +112,11 @@
 
     if (comparisonPriceLabel) {
       comparisonPriceLabel.textContent = billingPeriod === "annual" ? "Annual total (10 months billed)" : "Monthly price";
+    }
+    if (comparisonDescription) {
+      comparisonDescription.textContent = billingPeriod === "annual"
+        ? "Compare annual pricing and totals. Resource specifications still need confirmation before publication."
+        : "Compare monthly pricing and plan details. Resource specifications still need confirmation before publication.";
     }
 
     if (shouldAnnounce) {

@@ -15,15 +15,19 @@ Open `index.html` directly in a current web browser. No local server, package in
 - A comparison table with a contained horizontal scroll area, native expandable FAQ items, and a responsive footer.
 - Responsive pricing layout, labelled controls, keyboard focus styles, and a live region for price updates.
 
-The project uses local HTML, CSS, and JavaScript only. It has no external fonts, libraries, images, APIs, or network requests. The page can be opened offline; saved preferences depend on browser storage availability.
+The project uses local HTML, CSS, and JavaScript only. It has no external fonts, libraries, images, APIs, or network requests, so the page can be opened offline. The fixed exchange rates avoid a live-rate service but can become stale. Billing and currency preferences use browser `localStorage`; they stay in that browser profile, do not sync to an account, and fall back to monthly PKR when storage is unavailable.
 
 ## Verification status
 
-Browser testing has not been performed. Responsive behavior at 360px, 768px, and 1440px, 200% zoom, keyboard interaction, and preference restoration still need manual verification. Automated tests and Lighthouse have not been run.
+Browsers tested: none. Browser testing has not been performed. `node --check script.js` and `git diff --check` passed. No automated test suite or Lighthouse run has been performed. Responsive behavior at 360px, 768px, and 1440px, 200% zoom, keyboard interaction, and preference restoration still need manual browser verification.
 
 ## Remaining work
 
-The VPS resource specifications in the comparison table remain marked for confirmation because verified values were not provided for this assessment. Confirm final plan specifications and checkout terms before treating the page as production-ready.
+The VPS resource specifications in the comparison table remain marked for confirmation because verified values were not provided for this assessment. Displayed plan prices are illustrative assessment examples, not verified live PKHosting prices. Confirm specifications, current prices, and checkout terms with the provider before purchase. The required 360px, 768px, and 1440px screenshots and Lighthouse report/run are not present and remain to be completed.
 
 FAQ presentation: The native FAQ accordion uses the site’s navy and blue palette, with visible focus and open/closed states. It remains usable without JavaScript.
 The footer uses the page's navy and blue palette, with readable text, clear link hover and keyboard-focus states, and spacing adapted for narrow screens.
+
+## AI assistance
+
+AI tools assisted with parts of the implementation and review. The project has been reviewed, but manual browser testing remains outstanding. No automated test suite has been run.
