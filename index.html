@@ -25,6 +25,7 @@
         <h1 id="hero-heading">VPS hosting for your next project</h1>
         <p>Choose a plan with the resources your applications need, with monthly pricing in PKR.</p>
         <a class="cta-link" href="#plans">View VPS plans</a>
+        <a class="hero-secondary" href="#comparison">Compare plan features</a>
       </section>
 
       <section id="plans" aria-labelledby="plans-heading">
@@ -56,8 +57,17 @@
               <p><span class="annual-total" data-annual-total="starter"></span> billed annually</p>
               <p class="savings-badge" data-savings="starter"></p>
             </div>
-            <p>A starting point for small projects and testing.</p>
+            <p class="plan-description">For personal projects and small websites.</p>
             <a href="#contact">Choose Starter</a>
+            <hr class="plan-divider">
+            <ul class="plan-features" aria-label="Starter plan specifications">
+              <li>1 vCPU</li>
+              <li>2 GB RAM</li>
+              <li>40 GB NVMe storage</li>
+              <li>2 TB monthly transfer</li>
+              <li>Root/SSH access</li>
+              <li>IPv4 support</li>
+            </ul>
           </article>
 
           <article class="plan-card plan-card-popular" aria-labelledby="growth-name">
@@ -68,8 +78,17 @@
               <p><span class="annual-total" data-annual-total="growth"></span> billed annually</p>
               <p class="savings-badge" data-savings="growth"></p>
             </div>
-            <p>More room for growing applications and workloads.</p>
+            <p class="plan-description">For growing businesses and multiple websites.</p>
             <a href="#contact">Choose Growth</a>
+            <hr class="plan-divider">
+            <ul class="plan-features" aria-label="Growth plan specifications">
+              <li>2 vCPU</li>
+              <li>4 GB RAM</li>
+              <li>80 GB NVMe storage</li>
+              <li>4 TB monthly transfer</li>
+              <li>Root/SSH access</li>
+              <li>IPv4 support</li>
+            </ul>
           </article>
 
           <article class="plan-card" aria-labelledby="scale-name">
@@ -79,8 +98,17 @@
               <p><span class="annual-total" data-annual-total="scale"></span> billed annually</p>
               <p class="savings-badge" data-savings="scale"></p>
             </div>
-            <p>Additional capacity for demanding projects.</p>
+            <p class="plan-description">For high-traffic sites and demanding applications.</p>
             <a href="#contact">Choose Scale</a>
+            <hr class="plan-divider">
+            <ul class="plan-features" aria-label="Scale plan specifications">
+              <li>4 vCPU</li>
+              <li>8 GB RAM</li>
+              <li>160 GB NVMe storage</li>
+              <li>6 TB monthly transfer</li>
+              <li>Root/SSH access</li>
+              <li>IPv4 support</li>
+            </ul>
           </article>
 
           <article class="plan-card" aria-labelledby="dedicated-core-name">
@@ -90,17 +118,27 @@
               <p><span class="annual-total" data-annual-total="dedicated-core"></span> billed annually</p>
               <p class="savings-badge" data-savings="dedicated-core"></p>
             </div>
-            <p>Dedicated core resources for larger workloads.</p>
+            <p class="plan-description">For resource-intensive applications and workloads.</p>
             <a href="#contact">Choose Dedicated Core</a>
+            <hr class="plan-divider">
+            <ul class="plan-features" aria-label="Dedicated Core plan specifications">
+              <li>8 vCPU</li>
+              <li>16 GB RAM</li>
+              <li>320 GB NVMe storage</li>
+              <li>8 TB monthly transfer</li>
+              <li>Root/SSH access</li>
+              <li>IPv4 support</li>
+            </ul>
           </article>
         </div>
+        <p class="assumption-note"><strong>Specification note:</strong> These specifications are illustrative assessment assumptions and are not verified live PKHosting plan specifications.</p>
       </section>
 
       <section id="comparison" aria-labelledby="comparison-heading">
         <h2 id="comparison-heading">Compare plan features</h2>
         <p>Compare monthly pricing and plan details. Resource specifications still need confirmation before publication.</p>
         <div class="comparison-table-scroll" id="comparison-table-scroll" role="region" aria-label="VPS plan comparison table" tabindex="0" style="max-width: 100%; overflow-x: auto;">
-          <table style="width: 100%; min-width: 760px; border-collapse: collapse;">
+          <table style="width: 100%; min-width: 640px; border-collapse: collapse;">
             <caption>PKHosting VPS plan comparison</caption>
             <thead>
               <tr>
@@ -121,50 +159,42 @@
               </tr>
               <tr>
                 <th scope="row">Suggested workload</th>
-                <td>Small projects and testing</td>
-                <td>Growing applications and workloads</td>
-                <td>Demanding projects</td>
-                <td>Larger workloads</td>
+                <td>Personal projects and small websites</td>
+                <td>Growing businesses and multiple websites</td>
+                <td>High-traffic sites and demanding applications</td>
+                <td>Resource-intensive applications and workloads</td>
               </tr>
               <tr>
                 <th scope="row">CPU allocation</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <td>1 vCPU</td><td>2 vCPU</td><td>4 vCPU</td><td>8 vCPU</td>
               </tr>
               <tr>
                 <th scope="row">Memory (RAM)</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <td>2 GB</td><td>4 GB</td><td>8 GB</td><td>16 GB</td>
               </tr>
               <tr>
-                <th scope="row">Storage capacity and type</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <th scope="row">Storage capacity</th>
+                <td>40 GB</td><td>80 GB</td><td>160 GB</td><td>320 GB</td>
               </tr>
               <tr>
-                <th scope="row">Network port speed</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <th scope="row">Storage type</th>
+                <td>NVMe</td><td>NVMe</td><td>NVMe</td><td>NVMe</td>
               </tr>
               <tr>
                 <th scope="row">Data transfer allowance</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <td>2 TB/month</td><td>4 TB/month</td><td>6 TB/month</td><td>8 TB/month</td>
               </tr>
               <tr>
                 <th scope="row">IPv4 address</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <td>Supported</td><td>Supported</td><td>Supported</td><td>Supported</td>
               </tr>
               <tr>
-                <th scope="row">IPv6 support</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <th scope="row">SSH access</th>
+                <td>Included</td><td>Included</td><td>Included</td><td>Included</td>
               </tr>
               <tr>
-                <th scope="row">Root or administrator access</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
-              </tr>
-              <tr>
-                <th scope="row">Backup provision</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
-              </tr>
-              <tr>
-                <th scope="row">Support level</th>
-                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+                <th scope="row">Root access</th>
+                <td>Included</td><td>Included</td><td>Included</td><td>Included</td>
               </tr>
             </tbody>
           </table>
