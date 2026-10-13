@@ -65,18 +65,125 @@
 
       <section id="comparison" aria-labelledby="comparison-heading">
         <h2 id="comparison-heading">Compare plan features</h2>
-        <p><!-- TODO: Add an accessible plan comparison table in a later step. --></p>
+        <p>Compare monthly pricing and plan details. Resource specifications still need confirmation before publication.</p>
+        <div class="comparison-table-scroll" role="region" aria-label="VPS plan comparison table" tabindex="0" style="max-width: 100%; overflow-x: auto;">
+          <table style="width: 100%; min-width: 760px; border-collapse: collapse;">
+            <caption>PKHosting VPS plan comparison</caption>
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col">Starter</th>
+                <th scope="col">Growth</th>
+                <th scope="col">Scale</th>
+                <th scope="col">Dedicated Core</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Monthly price</th>
+                <td>Rs 2,400</td>
+                <td>Rs 4,800</td>
+                <td>Rs 9,600</td>
+                <td>Rs 19,500</td>
+              </tr>
+              <tr>
+                <th scope="row">Suggested workload</th>
+                <td>Small projects and testing</td>
+                <td>Growing applications and workloads</td>
+                <td>Demanding projects</td>
+                <td>Larger workloads</td>
+              </tr>
+              <tr>
+                <th scope="row">CPU allocation</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Memory (RAM)</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Storage capacity and type</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Network port speed</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Data transfer allowance</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">IPv4 address</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">IPv6 support</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Root or administrator access</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Backup provision</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+              <tr>
+                <th scope="row">Support level</th>
+                <td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading">Frequently asked questions</h2>
-        <p><!-- TODO: Add labelled FAQ content in a later step. --></p>
+        <details>
+          <summary>What are the monthly prices for these plans?</summary>
+          <p>Starter is Rs 2,400 per month, Growth is Rs 4,800, Scale is Rs 9,600, and Dedicated Core is Rs 19,500. Confirm the final billing terms at checkout.</p>
+        </details>
+        <details>
+          <summary>Which plan should I choose?</summary>
+          <p>Starter is presented for small projects and testing. Growth is for growing applications, Scale for demanding projects, and Dedicated Core for larger workloads. Confirm the plan resources against your needs before ordering.</p>
+        </details>
+        <details>
+          <summary>What specifications are included with each plan?</summary>
+          <p>CPU, memory, storage, networking, backup, and support details are marked for confirmation in the comparison table. Please confirm these specifications before publishing or purchasing.</p>
+        </details>
+        <details>
+          <summary>Which payment methods are available?</summary>
+          <p>The verified options are Visa and Mastercard through Stripe, PayPal, JazzCash, Easypaisa, and bank transfer. Wallet payments are for PKR invoices. PayPal is listed for USD, GBP, and EUR invoices, not PKR invoices. Card and bank transfer currency support can vary by invoice currency.</p>
+        </details>
       </section>
     </main>
 
     <footer id="contact" class="site-footer" aria-labelledby="footer-heading">
       <h2 id="footer-heading">Contact and site information</h2>
-      <p><!-- TODO: Add footer details in a later step. --></p>
+      <p>VPS hosting plans priced in Pakistani rupees. Contact the team for help confirming plan specifications and billing details.</p>
+      <address>
+        Email: <a href="mailto:support@pkhosting.com">support@pkhosting.com</a>
+      </address>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#plans">VPS plans</a></li>
+          <li><a href="#comparison">Compare features</a></li>
+          <li><a href="#faq">Frequently asked questions</a></li>
+        </ul>
+      </nav>
+      <section aria-labelledby="payment-methods-heading">
+        <h3 id="payment-methods-heading">Verified payment methods</h3>
+        <ul>
+          <li>Visa and Mastercard via Stripe</li>
+          <li>PayPal for eligible foreign-currency invoices</li>
+          <li>JazzCash</li>
+          <li>Easypaisa</li>
+          <li>Bank transfer</li>
+        </ul>
+        <p>JazzCash and Easypaisa are listed for PKR invoices. PayPal does not support PKR invoices.</p>
+      </section>
+      <p><small>Plan specifications and applicable billing terms should be confirmed before ordering.</small></p>
     </footer>
   </body>
 </html>

@@ -22,12 +22,12 @@
 }
 
 html {
-  min-width: 320px;
+  min-width: 0;
   scroll-behavior: smooth;
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
@@ -374,7 +374,13 @@ main > section:not(.hero),
   }
 
   .plan-price {
-    font-size: 1.85rem;
+    font-size: clamp(1rem, 6vw, 1.85rem);
+    white-space: normal;
+  }
+
+  .plan-price span {
+    display: block;
+    margin-left: 0;
   }
 }
 
@@ -387,5 +393,274 @@ main > section:not(.hero),
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Comparison table: keep any wide-table scrolling inside its own region. */
+.comparison-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table-scroll:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+.comparison-table-scroll table {
+  width: 100%;
+  min-width: 760px;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.comparison-table-scroll caption {
+  padding: 1rem 1.1rem;
+  color: var(--navy);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.comparison-table-scroll th,
+.comparison-table-scroll td {
+  min-width: 9rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.comparison-table-scroll thead th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.comparison-table-scroll thead th:first-child {
+  min-width: 13rem;
+  border-top-left-radius: 0.4rem;
+}
+
+.comparison-table-scroll thead th:last-child {
+  border-top-right-radius: 0.4rem;
+}
+
+.comparison-table-scroll tbody th[scope="row"] {
+  min-width: 13rem;
+  background: #f7f9fc;
+  color: #25344c;
+  font-weight: 650;
+}
+
+.comparison-table-scroll tbody td {
+  background: #fff;
+}
+
+/* Growth is column three after the row-label column. */
+.comparison-table-scroll thead th:nth-child(3) {
+  background: var(--blue-dark);
+}
+
+.comparison-table-scroll tbody td:nth-child(3) {
+  background: #f1f5ff;
+}
+
+.comparison-table-scroll tbody tr:last-child th,
+.comparison-table-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Native disclosure widgets stay keyboard- and script-accessible. */
+#faq {
+  display: grid;
+  gap: 0.75rem;
+}
+
+#faq h2 {
+  margin-bottom: 0.5rem;
+}
+
+#faq details {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+#faq details[open] {
+  border-color: #a9c2f6;
+  box-shadow: 0 6px 18px rgb(19 39 73 / 5%);
+}
+
+#faq summary {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  color: var(--navy);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: none;
+}
+
+#faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#faq summary::after {
+  flex: 0 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #eaf1ff;
+  color: var(--blue-dark);
+  content: "+";
+  font-size: 1.1rem;
+  line-height: 1.35rem;
+  text-align: center;
+}
+
+#faq details[open] summary::after {
+  content: "−";
+}
+
+#faq summary:focus-visible {
+  position: relative;
+  z-index: 1;
+  border-radius: 0.7rem;
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+#faq details > p {
+  margin: 0;
+  padding: 0 1.1rem 1.1rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* Full-width footer with responsive columns for contact, navigation and payments. */
+.site-footer {
+  display: grid;
+  width: 100%;
+  max-width: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+  margin: 4rem 0 0;
+  border-top: 0;
+  padding: 2.75rem clamp(1rem, 6vw, 5rem) 2rem;
+  background: var(--navy);
+  color: #d5deed;
+}
+
+.site-footer h2,
+.site-footer > p:first-of-type,
+.site-footer > p:last-of-type {
+  grid-column: 1 / -1;
+}
+
+.site-footer h2 {
+  color: #fff;
+}
+
+.site-footer > p {
+  min-height: 0;
+  margin: 0;
+  color: #c4d0e2;
+}
+
+.site-footer address {
+  align-self: start;
+  color: #d5deed;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.site-footer a {
+  color: #bfdbfe;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-footer nav ul,
+.site-footer section ul {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer nav a {
+  text-decoration: none;
+}
+
+.site-footer section {
+  min-width: 0;
+  border-left: 1px solid #344460;
+  padding-left: 1.5rem;
+}
+
+.site-footer section h3 {
+  margin: 0 0 0.75rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.site-footer section p {
+  margin: 0.8rem 0 0;
+  color: #c4d0e2;
+  font-size: 0.9rem;
+}
+
+.site-footer small {
+  color: #aebbd0;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    padding-top: 2.25rem;
+  }
+
+  .site-footer h2,
+  .site-footer > p:first-of-type,
+  .site-footer > p:last-of-type {
+    grid-column: auto;
+  }
+
+  .site-footer section {
+    border-top: 1px solid #344460;
+    border-left: 0;
+    padding-top: 1.25rem;
+    padding-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #faq details {
+    transition: none;
   }
 }
