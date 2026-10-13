@@ -31,10 +31,31 @@
         <h2 id="plans-heading">Choose your VPS plan</h2>
         <p>All prices below are monthly prices in Pakistani rupees.</p>
 
-        <div class="pricing-grid">
+        <div class="pricing-controls" aria-label="Pricing options">
+          <fieldset class="billing-control" aria-controls="pricing-grid comparison-table-scroll">
+            <legend>Billing period</legend>
+            <label><input type="radio" name="billing-period" value="monthly" checked> Monthly</label>
+            <label><input type="radio" name="billing-period" value="annual"> Annually <span class="billing-discount">Pay for 10 months</span></label>
+          </fieldset>
+          <div class="currency-control">
+            <label for="currency-select">Display currency</label>
+            <select id="currency-select" aria-controls="pricing-grid comparison-table-scroll">
+              <option value="PKR">PKR — Pakistani rupee</option>
+              <option value="USD">USD — US dollar</option>
+              <option value="GBP">GBP — British pound</option>
+            </select>
+          </div>
+        </div>
+        <p id="pricing-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+
+        <div class="pricing-grid" id="pricing-grid">
           <article class="plan-card" aria-labelledby="starter-name">
             <h3 id="starter-name">Starter</h3>
-            <p class="plan-price"><data value="2400">Rs 2,400</data><span>/ month</span></p>
+            <p class="plan-price"><span class="plan-amount" data-plan-price="starter" data-monthly-pkr="2400">Rs 2,400</span><span class="price-unit">/ month</span></p>
+            <div class="annual-price-details" hidden>
+              <p><span class="annual-total" data-annual-total="starter"></span> billed annually</p>
+              <p class="savings-badge" data-savings="starter"></p>
+            </div>
             <p>A starting point for small projects and testing.</p>
             <a href="#contact">Choose Starter</a>
           </article>
@@ -42,21 +63,33 @@
           <article class="plan-card plan-card-popular" aria-labelledby="growth-name">
             <p class="plan-badge">Most Popular</p>
             <h3 id="growth-name">Growth</h3>
-            <p class="plan-price"><data value="4800">Rs 4,800</data><span>/ month</span></p>
+            <p class="plan-price"><span class="plan-amount" data-plan-price="growth" data-monthly-pkr="4800">Rs 4,800</span><span class="price-unit">/ month</span></p>
+            <div class="annual-price-details" hidden>
+              <p><span class="annual-total" data-annual-total="growth"></span> billed annually</p>
+              <p class="savings-badge" data-savings="growth"></p>
+            </div>
             <p>More room for growing applications and workloads.</p>
             <a href="#contact">Choose Growth</a>
           </article>
 
           <article class="plan-card" aria-labelledby="scale-name">
             <h3 id="scale-name">Scale</h3>
-            <p class="plan-price"><data value="9600">Rs 9,600</data><span>/ month</span></p>
+            <p class="plan-price"><span class="plan-amount" data-plan-price="scale" data-monthly-pkr="9600">Rs 9,600</span><span class="price-unit">/ month</span></p>
+            <div class="annual-price-details" hidden>
+              <p><span class="annual-total" data-annual-total="scale"></span> billed annually</p>
+              <p class="savings-badge" data-savings="scale"></p>
+            </div>
             <p>Additional capacity for demanding projects.</p>
             <a href="#contact">Choose Scale</a>
           </article>
 
           <article class="plan-card" aria-labelledby="dedicated-core-name">
             <h3 id="dedicated-core-name">Dedicated Core</h3>
-            <p class="plan-price"><data value="19500">Rs 19,500</data><span>/ month</span></p>
+            <p class="plan-price"><span class="plan-amount" data-plan-price="dedicated-core" data-monthly-pkr="19500">Rs 19,500</span><span class="price-unit">/ month</span></p>
+            <div class="annual-price-details" hidden>
+              <p><span class="annual-total" data-annual-total="dedicated-core"></span> billed annually</p>
+              <p class="savings-badge" data-savings="dedicated-core"></p>
+            </div>
             <p>Dedicated core resources for larger workloads.</p>
             <a href="#contact">Choose Dedicated Core</a>
           </article>
@@ -66,7 +99,7 @@
       <section id="comparison" aria-labelledby="comparison-heading">
         <h2 id="comparison-heading">Compare plan features</h2>
         <p>Compare monthly pricing and plan details. Resource specifications still need confirmation before publication.</p>
-        <div class="comparison-table-scroll" role="region" aria-label="VPS plan comparison table" tabindex="0" style="max-width: 100%; overflow-x: auto;">
+        <div class="comparison-table-scroll" id="comparison-table-scroll" role="region" aria-label="VPS plan comparison table" tabindex="0" style="max-width: 100%; overflow-x: auto;">
           <table style="width: 100%; min-width: 760px; border-collapse: collapse;">
             <caption>PKHosting VPS plan comparison</caption>
             <thead>
@@ -80,11 +113,11 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Monthly price</th>
-                <td>Rs 2,400</td>
-                <td>Rs 4,800</td>
-                <td>Rs 9,600</td>
-                <td>Rs 19,500</td>
+                <th scope="row" id="comparison-price-label">Monthly price</th>
+                <td data-comparison-price="starter">Rs 2,400</td>
+                <td data-comparison-price="growth">Rs 4,800</td>
+                <td data-comparison-price="scale">Rs 9,600</td>
+                <td data-comparison-price="dedicated-core">Rs 19,500</td>
               </tr>
               <tr>
                 <th scope="row">Suggested workload</th>
@@ -141,8 +174,8 @@
       <section id="faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading">Frequently asked questions</h2>
         <details>
-          <summary>What are the monthly prices for these plans?</summary>
-          <p>Starter is Rs 2,400 per month, Growth is Rs 4,800, Scale is Rs 9,600, and Dedicated Core is Rs 19,500. Confirm the final billing terms at checkout.</p>
+          <summary>How do I compare monthly and annual prices?</summary>
+          <p>The pricing cards show the selected billing period and currency. Annual billing covers 12 months of service for the cost of 10 monthly payments. Confirm the final invoice total at checkout.</p>
         </details>
         <details>
           <summary>Which plan should I choose?</summary>
@@ -154,7 +187,7 @@
         </details>
         <details>
           <summary>Which payment methods are available?</summary>
-          <p>The verified options are Visa and Mastercard through Stripe, PayPal, JazzCash, Easypaisa, and bank transfer. Wallet payments are for PKR invoices. PayPal is listed for USD, GBP, and EUR invoices, not PKR invoices. Card and bank transfer currency support can vary by invoice currency.</p>
+        <p>The verified options are Visa and Mastercard through Stripe, PayPal, JazzCash, Easypaisa, and bank transfer. Wallet payments are for PKR invoices. PayPal is listed for USD, GBP, and EUR invoices, not PKR invoices. Card and bank transfer currency support can vary by invoice currency.</p>
         </details>
       </section>
     </main>
